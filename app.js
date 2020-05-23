@@ -28,30 +28,23 @@ PromisePool.for(files)
       convert(...exifData.GPSInfo.GPSLongitude, exifData.GPSInfo.GPSLongitudeRef),
     ]
 
-    try {
-      fs.unlink(smallFilepath)
-    } catch {
-      //
-    }
-    try {
-      fs.unlink(mediumFilepath)
-    } catch {
-      //
+    if (!fs.existsSync(smallFilepath)) {
+      sharp(filePath, { failOnError: false })
+        .resize(200)
+        .rotate()
+        .jpeg(jpegOptions)
+        .toFile(smallFilepath)
+        .catch(console.error)
     }
 
-    sharp(filePath, { failOnError: false })
-      .resize(200)
-      .rotate()
-      .jpeg(jpegOptions)
-      .toFile(smallFilepath)
-      .catch(console.error)
-
-    sharp(filePath, { failOnError: false })
-      .resize(800)
-      .rotate()
-      .jpeg(jpegOptions)
-      .toFile(mediumFilepath)
-      .catch(console.error)
+    if (!fs.existsSync(mediumFilepath)) {
+      sharp(filePath, { failOnError: false })
+        .resize(800)
+        .rotate()
+        .jpeg(jpegOptions)
+        .toFile(mediumFilepath)
+        .catch(console.error)
+    }
 
     return {
       ...exifData.GPSInfo,
