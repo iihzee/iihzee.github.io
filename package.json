@@ -1,0 +1,26 @@
+{
+  "name": "iihzee",
+  "version": "1.0.0",
+  "description": "Travelling across Nepal",
+  "main": "app.js",
+  "scripts": {
+    "build": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iihzee/iihzee.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iihzee/iihzee.github.io/issues"
+  },
+  "homepage": "https://github.com/iihzee/iihzee.github.io#readme",
+  "dependencies": {
+    "@supercharge/promise-pool": "^1.2.0",
+    "jpeg-exif": "^1.1.4",
+    "sharp": "^0.25.3"
+  }
+}
