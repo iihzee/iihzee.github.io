@@ -21,6 +21,6 @@
   "dependencies": {
     "@supercharge/promise-pool": "^1.2.0",
     "jpeg-exif": "^1.1.4",
-    "sharp": "^0.25.3"
+    "sharp": "^0.30.5"
   }
 }
